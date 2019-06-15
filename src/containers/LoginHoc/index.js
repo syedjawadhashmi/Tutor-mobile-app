@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-// import { LoginManager } from 'react-native-fbsdk';
+import { LoginManager } from 'react-native-fbsdk';
 import { GoogleSignin, statusCodes } from 'react-native-google-signin';
 import { connect } from 'react-redux';
 
@@ -80,27 +80,27 @@ const LoginHOC = (WrappedComponent) => {
                             // play services not available or outdated
                         } else {
                             // some other error happened
-                            // alert('some other error happened',error)
+                            alert(error.code)
                         }
                     }
                 };
 
                 // facebooklogin
                 handleFbLogin() {
-                    // LoginManager.logInWithReadPermissions(['public_profile']).then(
-                    //     function (result) {
-                    //         console.log(result)
-                    //         if (result.isCancelled) {
-                    //             alert('Login was cancelled');
-                    //         } else {
-                    //             alert('Login was successful with permissions: '
-                    //                 + result.grantedPermissions.toString());
-                    //         }
-                    //     },
-                    //     function (error) {
-                    //         alert('Login failed with error: ' + error);
-                    //     }
-                    // );
+                    LoginManager.logInWithReadPermissions(['public_profile']).then(
+                        function (result) {
+                            console.log(result)
+                            if (result.isCancelled) {
+                                alert('Login was cancelled');
+                            } else {
+                                alert('Login was successful with permissions: '
+                                    + result.grantedPermissions.toString());
+                            }
+                        },
+                        function (error) {
+                            alert('Login failed with error: ' + error);
+                        }
+                    );
                 }
 
                 render() {
