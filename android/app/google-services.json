@@ -1,0 +1,93 @@
+{
+  "project_info": {
+    "project_number": "238002584387",
+    "firebase_url": "https://blood-bank-d4bbb.firebaseio.com",
+    "project_id": "blood-bank-d4bbb",
+    "storage_bucket": "blood-bank-d4bbb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:238002584387:android:162265486061d5af",
+        "android_client_info": {
+          "package_name": "com.able"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "238002584387-4kl5lfr84ufqihfgnc4c7tbr1kkqsmk5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.able",
+            "certificate_hash": "6342c2cd9e815a193dec47f7a4ca9515b84a90e3"
+          }
+        },
+        {
+          "client_id": "238002584387-ftfsj9oemj15nph01etej9h6579cjhen.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.able",
+            "certificate_hash": "bd4fa22eaae7345c3c02489d9a7af8437649271b"
+          }
+        },
+        {
+          "client_id": "238002584387-iplv746kalkdv4je3bfjolhvvs4n2cvr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.able",
+            "certificate_hash": "dcc814c9de9b47273ea0b006b8d9617129e5501a"
+          }
+        },
+        {
+          "client_id": "238002584387-ep6jp147h9je00bv2cdrof9b6kv8in1f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBaBUYadAZqQMw1x76KzgenJ6dCiS5mojc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "238002584387-hj563edc9si5hdl7ce3nth0hnc7ft0qs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:238002584387:android:e06230f5b23ef6b4",
+        "android_client_info": {
+          "package_name": "com.tutor_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "238002584387-ep6jp147h9je00bv2cdrof9b6kv8in1f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBaBUYadAZqQMw1x76KzgenJ6dCiS5mojc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "238002584387-hj563edc9si5hdl7ce3nth0hnc7ft0qs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
