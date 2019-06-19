@@ -41,11 +41,21 @@ const RootStack = createDrawerNavigator({
         // initialRouteName: 'SelectInterpreterScreen'
     }
 )
-
+const onBoardingStack = createStackNavigator(
+	{
+		OnBoarding: {
+			screen: OnBoarding,
+		},
+	},
+	{
+		// headerMode:'none',
+		initialRouteName: 'OnBoarding'
+	}
+);
 // if user logout we will use this one 
 const AuthStack = createStackNavigator({
 
-    OnBoardingScreen: OnBoarding,
+  
     LoginScreen: Login,
 
     Signup: Signup,
@@ -53,7 +63,7 @@ const AuthStack = createStackNavigator({
 
 },
     {
-        initialRouteName: 'OnBoardingScreen'
+        initialRouteName: 'LoginScreen'
     }
 )
 
@@ -61,11 +71,12 @@ const AuthStack = createStackNavigator({
 
 export default createAppContainer(createSwitchNavigator(
     {
+        OnBoardingScreen: onBoardingStack,
         App: RootStack, // the whole app routes
         Auth: AuthStack, // when user logout
         AuthLoading: AuthLoading // where we decid where to switch app or auth
     },
     {
-        initialRouteName: 'Auth'
+        initialRouteName: 'OnBoardingScreen'
     }
 ))

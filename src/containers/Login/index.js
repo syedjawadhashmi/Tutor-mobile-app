@@ -17,13 +17,13 @@ class Login extends Component {
             <View style={styles.InputContainer}>
                 <KeyboardAwareScrollView contentContainerStyle={{ justifyContent: 'center', display: 'flex' }}>
                     <ImageHeader
-                        verticalHeight={20}
+                    // verticalHeight={20}
                     />
                     <LoginForm
                         navigate={navigate}
                     />
                 </KeyboardAwareScrollView >
-            </View >
+            </View>
         )
     }
 }
@@ -35,6 +35,9 @@ const styles = {
         display: 'flex',
         flex: 1,
         justifyContent: 'center',
+        height: '100%',
+        // alignItems:'center',
+        // width:'100%',
         backgroundColor: 'white',
     }
 }

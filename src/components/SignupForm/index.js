@@ -15,7 +15,7 @@ import { styles } from './styles';
 class SignupForm extends Component {
     state = {
         date: new Date(2019, 6, 12),
-        selectedDate:''
+        selectedDate: ''
     }
     showDatePicker = async () => {
         try {
@@ -25,9 +25,9 @@ class SignupForm extends Component {
                 date: new Date(2020, 4, 25)
             });
             if (action !== DatePickerAndroid.dismissedAction) {
-                var date = new Date(year,month,day)
+                var date = new Date(year, month, day)
                 var dateString = date.toLocaleDateString();
-                this.setState({selectedDate:dateString})
+                this.setState({ selectedDate: dateString })
                 // Selected year, month (0-11), day
             }
         } catch ({ code, message }) {
@@ -44,98 +44,100 @@ class SignupForm extends Component {
         console.log(onChange)
         return (
             <Fragment>
-                <View style={{ flexDirection: 'row', alignItems: 'center', width: '95%', marginLeft: 10 }}>
+                <View style={{ justifyContent: 'space-around', alignItems: 'center' }}>
+                    <View style={{ flexDirection: 'row', alignItems: 'center', width: '95%', marginLeft: 0 }}>
+                        <View style={{ width: '54%' }}>
+                            <TextInput
+                                rounded={false}
+                                placeholder="Firs Name"
+                                keyboardType="default"
+                                handleChange={onChange}
+                                underlineColor="black"
+                                secureTextEntry={false}
+                                name="firstName"
+                                value={states.firstName}
+                                icon={<Icon
+                                    size={20}
+                                    name="user"
+                                    type="feather"
+                                    color={brandColors.darkBrown} />}
+                            />
+                        </View>
+                        <View style={{ width: '54%', marginLeft: '-8%' }}>
+                            <TextInput
+                                rounded={false}
+                                name="lastName"
+                                placeholder="Last Name"
+                                keyboardType="default"
+                                handleChange={onChange}
+                                underlineColor="black"
+                                secureTextEntry={false}
+                                value={states.lastName}
+                                icon={false}
+                            />
+                        </View>
+                    </View>
+                    <TouchableOpacity style={{ width: '85%', height: 40, alignItems: 'center', flexDirection: 'row', borderBottomWidth: 0.5, borderBottomColor: '#000' }} onPress={this.showDatePicker.bind(this)}>
+                        <Icon
+                            size={20}
+                            name="event"
+                            containerStyle={{ marginLeft: 12 }}
+                            color={brandColors.darkBrown} />
+                        <Text style={{ marginLeft: 10, color: '#d5d5d5' }}>{this.state.selectedDate ? this.state.selectedDate : 'Birth Date'}</Text>
+                    </TouchableOpacity>
                     <TextInput
                         rounded={false}
-                        placeholder="Firs Name"
+                        placeholder="Email"
+                        name="email"
                         keyboardType="default"
                         handleChange={onChange}
                         underlineColor="black"
                         secureTextEntry={false}
-                        name="firstName"
-                        value={states.firstName}
+                        value={states.email}
                         icon={<Icon
                             size={20}
-                            name="user"
-                            type="feather"
+                            name="mail"
+                            type="octicon"
                             color={brandColors.darkBrown} />}
                     />
                     <TextInput
-                        rounded={false}
-                        name="lastName"
-                        placeholder="Last Name"
+                        name="password"
+                        placeholder="Password"
                         keyboardType="default"
                         handleChange={onChange}
                         underlineColor="black"
-                        secureTextEntry={false}
-                        value={states.lastName}
-                        icon={<Icon
-                            size={20}
-                            name="user"
-                            type="feather"
-                            color={brandColors.darkBrown} />}
+                        secureTextEntry={true}
+                        value={states.password}
+                        icon={
+                            <Icon
+                                size={26}
+                                name="lock"
+                                containerStyle={{ marginHorizontal: -5 }}
+                                type="evilicon"
+                                color={brandColors.darkbrown}
+                            />}
                     />
-                </View>
-                <TextInput
-                    rounded={false}
-                    placeholder="Email"
-                    name="email"
-                    keyboardType="default"
-                    handleChange={onChange}
-                    underlineColor="black"
-                    secureTextEntry={false}
-                    value={states.email}
-                    icon={<Icon
-                        size={20}
-                        name="mail"
-                        type="octicon"
-                        color={brandColors.darkBrown} />}
-                />
-                <TextInput
-                    name="password"
-                    placeholder="Password"
-                    keyboardType="default"
-                    handleChange={onChange}
-                    underlineColor="black"
-                    secureTextEntry={true}
-                    value={states.password}
-                    icon={
-                        <Icon
-                            size={26}
-                            name="lock"
-                            containerStyle={{ marginHorizontal: -5 }}
-                            type="evilicon"
-                            color={brandColors.darkbrown}
-                        />}
-                />
 
 
-                <TextInput
-                    name="confirmPassword"
-                    placeholder="Confirm Password"
-                    keyboardType="default"
-                    handleChange={onChange}
-                    underlineColor="black"
-                    secureTextEntry={true}
-                    value={states.confirmPassword}
-                    icon={
-                        <Icon
-                            size={26}
-                            name="lock"
-                            containerStyle={{ marginHorizontal: -5 }}
-                            type="evilicon"
-                            color={brandColors.darkbrown}
-                        />}
-                />
-                <TouchableOpacity style={{width:'85%',marginLeft:30,height:40,alignItems:'center',flexDirection:'row',borderBottomWidth:0.5,borderBottomColor:'#000'}} onPress={this.showDatePicker.bind(this)}>
-                    <Icon
-                        size={20}
-                        name="event"
-                        containerStyle={{marginLeft:12}}
-                        color={brandColors.darkBrown} />
-                        <Text style={{marginLeft:10,color:'#d5d5d5'}}>{this.state.selectedDate?this.state.selectedDate:'Birth Date'}</Text>
-                </TouchableOpacity>
-                {/* <TextInput
+                    <TextInput
+                        name="confirmPassword"
+                        placeholder="Confirm Password"
+                        keyboardType="default"
+                        handleChange={onChange}
+                        underlineColor="black"
+                        secureTextEntry={true}
+                        value={states.confirmPassword}
+                        icon={
+                            <Icon
+                                size={26}
+                                name="lock"
+                                containerStyle={{ marginHorizontal: -5 }}
+                                type="evilicon"
+                                color={brandColors.darkbrown}
+                            />}
+                    />
+
+                    {/* <TextInput
                     name="birthDay"
                     rounded={false}
                     placeholder="Birthday"
@@ -146,14 +148,14 @@ class SignupForm extends Component {
                     value={states.birthDay}
                     icon={}
                 /> */}
-                <Button
-                    loading={loading}
-                    backgroundColor="#EA4335"
-                    Title="Register"
-                    onPress={() => handleCustomSignup()}
-                    rounded={true}
-                />
-
+                    <Button
+                        loading={loading}
+                        backgroundColor="#EA4335"
+                        Title="Register"
+                        onPress={() => handleCustomSignup()}
+                        rounded={true}
+                    />
+                </View>
             </Fragment >
         )
     }

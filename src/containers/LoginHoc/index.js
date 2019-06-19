@@ -80,7 +80,7 @@ const LoginHOC = (WrappedComponent) => {
                             // play services not available or outdated
                         } else {
                             // some other error happened
-                            alert(error.code)
+                            alert("loginsucccess")
                         }
                     }
                 };
